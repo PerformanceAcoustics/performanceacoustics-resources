@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Resources from Performance Acoustics: practical thinking for places designed around people.">
+  <meta name="theme-color" content="#173b3a">
+  <title>Resources | Performance Acoustics</title>
+  <style>
+    :root {
+      --ink: #173b3a;
+      --ink-deep: #102d2c;
+      --text: #263b3a;
+      --muted: #617573;
+      --paper: #fbfaf6;
+      --surface: #ffffff;
+      --soft: #edf3f0;
+      --line: #d9e2de;
+      --accent: #d6a55d;
+      --shadow: 0 18px 45px rgba(16, 45, 44, 0.09);
+      --radius: 1.15rem;
+      --max-width: 74rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 0.25rem;
+    }
+
+    .wrap {
+      width: min(calc(100% - 2.5rem), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      padding: 1.4rem 0;
+      border-bottom: 1px solid rgba(23, 59, 58, 0.12);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--ink);
+      font-weight: 700;
+      letter-spacing: 0.015em;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 2.25rem;
+      height: 2.25rem;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4.5rem, 10vw, 8.25rem) 0 clamp(4rem, 8vw, 6.75rem);
+      background:
+        radial-gradient(circle at 82% 15%, rgba(214, 165, 93, 0.18), transparent 25rem),
+        linear-gradient(145deg, #173b3a, #102d2c);
+      color: #fff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -7rem;
+      bottom: -14rem;
+      width: 31rem;
+      height: 31rem;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 50%;
+      box-shadow: 0 0 0 4rem rgba(255, 255, 255, 0.025), 0 0 0 8rem rgba(255, 255, 255, 0.018);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      margin: 0 0 1.15rem;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 14ch;
+      margin-bottom: 1.35rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.75rem, 7vw, 5.75rem);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 0.98;
+    }
+
+    .hero-copy {
+      max-width: 42rem;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+    }
+
+    main { padding: clamp(4rem, 8vw, 7rem) 0; }
+
+    .section-heading {
+      max-width: 42rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0.7rem;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .featured {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+      overflow: hidden;
+      margin-bottom: 4.5rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .featured-art {
+      display: grid;
+      min-height: 25rem;
+      padding: clamp(2rem, 5vw, 4rem);
+      place-items: center;
+      background:
+        linear-gradient(160deg, rgba(255,255,255,0.03), rgba(255,255,255,0.12)),
+        var(--ink);
+    }
+
+    .document-cover {
+      width: min(100%, 17.5rem);
+      aspect-ratio: 0.72;
+      padding: 2.25rem 1.8rem;
+      background: #f4f0e6;
+      color: var(--ink-deep);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
+      transform: rotate(-2deg);
+    }
+
+    .document-cover small {
+      display: block;
+      margin-bottom: 3rem;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .document-cover strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.85rem, 3vw, 2.65rem);
+      font-weight: 400;
+      line-height: 1.02;
+    }
+
+    .cover-line {
+      width: 3rem;
+      height: 0.22rem;
+      margin-top: 2rem;
+      background: var(--accent);
+    }
+
+    .featured-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: clamp(2.25rem, 6vw, 5.5rem);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 1.15rem;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--ink);
+      font-size: 0.75rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .featured h2 {
+      margin-bottom: 1.1rem;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.35rem);
+      font-weight: 400;
+      letter-spacing: -0.025em;
+      line-height: 1.07;
+    }
+
+    .featured p {
+      max-width: 36rem;
+      margin-bottom: 1.75rem;
+      color: var(--muted);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      min-height: 3.15rem;
+      padding: 0.78rem 1.15rem;
+      border: 2px solid var(--ink);
+      border-radius: 0.55rem;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 750;
+      text-decoration: none;
+      transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .button:hover {
+      background: transparent;
+      color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .button svg { width: 1.1rem; height: 1.1rem; }
+
+    .coming-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .coming-card {
+      min-height: 14rem;
+      padding: 1.75rem;
+      border: 1px solid var(--line);
+      border-radius: 0.9rem;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    .coming-card .number {
+      display: block;
+      margin-bottom: 2.75rem;
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.1rem;
+    }
+
+    .coming-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+      font-weight: 400;
+    }
+
+    .coming-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .site-footer {
+      padding: 2.25rem 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .footer-inner p { margin: 0; }
+
+    .footer-inner a {
+      color: var(--ink);
+      font-weight: 700;
+      text-underline-offset: 0.2em;
+    }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(calc(100% - 1.5rem), var(--max-width)); }
+      .featured { grid-template-columns: 1fr; }
+      .featured-art { min-height: 21rem; }
+      .document-cover { width: min(70%, 14rem); }
+      .coming-grid { grid-template-columns: 1fr; }
+      .coming-card { min-height: auto; }
+      .coming-card .number { margin-bottom: 1.75rem; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="https://performanceacoustics.com" aria-label="Performance Acoustics home">
+        <span class="brand-mark" aria-hidden="true">PA</span>
+        <span>Performance Acoustics</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="wrap">
+      <p class="eyebrow">Knowledge &amp; insight</p>
+      <h1 id="page-title">Performance Acoustics Resources</h1>
+      <p class="hero-copy">Practical thinking for places designed around people — bringing clarity, comfort and wellbeing into acoustic design.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <div class="section-heading">
+        <p class="eyebrow">Featured publication</p>
+        <h2>Ideas to help shape better places</h2>
+        <p>Explore our latest publication, created to support architects, developers, operators and everyone involved in the built environment.</p>
+      </div>
+
+      <article class="featured">
+        <div class="featured-art" aria-hidden="true">
+          <div class="document-cover">
+            <small>Performance Acoustics</small>
+            <strong>The People-First Acoustics Manifesto</strong>
+            <div class="cover-line"></div>
+          </div>
+        </div>
+        <div class="featured-content">
+          <span class="tag">Free PDF</span>
+          <h2>The People-First Acoustics Manifesto</h2>
+          <p>Buildings are designed for people. Their acoustics should be too. Discover the principles behind creating places that support communication, concentration, recovery, learning and wellbeing.</p>
+          <a class="button" href="The-People-First-Acoustics-Manifesto.pdf" download>
+            Download the manifesto
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12"></path>
+              <path d="m7 10 5 5 5-5"></path>
+              <path d="M5 21h14"></path>
+            </svg>
+          </a>
+        </div>
+      </article>
+
+      <section aria-labelledby="coming-title">
+        <div class="section-heading">
+          <p class="eyebrow">The library is growing</p>
+          <h2 id="coming-title">Coming soon</h2>
+          <p>More useful, considered resources are in development.</p>
+        </div>
+
+        <div class="coming-grid">
+          <article class="coming-card">
+            <span class="number" aria-hidden="true">01</span>
+            <h3>Case Studies</h3>
+            <p>Real projects, practical challenges and the thinking behind our solutions.</p>
+          </article>
+          <article class="coming-card">
+            <span class="number" aria-hidden="true">02</span>
+            <h3>Technical Guides</h3>
+            <p>Clear guidance to inform design decisions and improve acoustic outcomes.</p>
+          </article>
+          <article class="coming-card">
+            <span class="number" aria-hidden="true">03</span>
+            <h3>CPD Material</h3>
+            <p>Learning resources for architects and built-environment professionals.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; <span id="year">2026</span> Performance Acoustics. All rights reserved.</p>
+      <a href="https://performanceacoustics.com">Visit our main website</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
